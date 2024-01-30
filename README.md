@@ -1,0 +1,1 @@
+A repository containing Helm charts and Kubernetes manifests for deploying applications and services on Google Kubernetes Engine (GKE). Includes configurations for cert-manager for managing TLS certificates and MongoDB stateful sets for scalable database deployments.
