@@ -1,0 +1,41 @@
+replicaCount: 3
+port: 27017
+replicaSetName: MainRepSet
+arbiter:
+  enabled: false
+persistence:
+  name: mongodb-persistent-storage-claim
+  size: 1Gi
+  mountPath: /data/db
+podDisruptionBudget: {}
+auth:
+  enabled: true
+  existingAdminSecret: mysecret
+  rootUser: root
+  # rootPassword: F6oSamEXZx
+architecture: replicaset
+podSecurityContext:
+  enabled: true
+  runAsUser: 999
+  fsGroup: 999
+  runAsNonRoot: true
+containerSecurityContext:
+  enabled: true
+  runAsUser: 999
+  runAsNonRoot: true
+terminationGracePeriodSeconds: 30
+tls:
+  enabled: false
+configmap: {}
+readinessProbe:
+  initialDelaySeconds: 5
+  timeoutSeconds: 1
+  failureThreshold: 3
+  periodSeconds: 10
+  successThreshold: 1
+livenessProbe:
+  initialDelaySeconds: 30
+  timeoutSeconds: 5
+  failureThreshold: 3
+  periodSeconds: 10
+  successThreshold: 1

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: demo-crm-conf
+data:
+  LOG_LEVEL: "info"
+  PERSISTENCE: "true"
