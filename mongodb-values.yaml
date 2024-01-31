@@ -10,9 +10,8 @@ persistence:
 podDisruptionBudget: {}
 auth:
   enabled: true
-  existingAdminSecret: mysecret
+  existingSecret: mysecret
   rootUser: root
-  # rootPassword: F6oSamEXZx
 architecture: replicaset
 podSecurityContext:
   enabled: true
